@@ -15,7 +15,7 @@ export function hvacApiBases(): string[] {
   return [...FALLBACK_BASES];
 }
 
-export type SupportLevel = "L1" | "L2" | "L3";
+export type SupportLevel = "L1" | "L2";
 export type AnswerSource = "kb" | "openrouter";
 
 export type HvacBrand = {

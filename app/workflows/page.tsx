@@ -18,7 +18,7 @@ export default function WorkflowsPage() {
             {subCount} business-process sub-workflows),{" "}
             <strong className="text-slate-100">Nandi</strong> (support ticketing), and{" "}
             <strong className="text-slate-100">Reach</strong> (marketing), and{" "}
-            <strong className="text-slate-100">HVAC</strong> (L1/L2/L3 support portal).
+            <strong className="text-slate-100">HVAC</strong> (L1/L2 support portal).
           </p>
           <p className="mt-3 max-w-3xl text-sm text-slate-500">{RHYTHM_SMB_VERTICALS_SUMMARY}</p>
           <PartnerLogosBar className="mt-8" />
@@ -101,11 +101,11 @@ export default function WorkflowsPage() {
               </div>
               <div>
                 <h2 className="text-xl font-semibold text-slate-100 group-hover:text-orange-100">HVAC Support</h2>
-                <p className="text-xs text-slate-500">L1 / L2 / L3 · port 8130</p>
+                <p className="text-xs text-slate-500">L1 / L2 · port 8130</p>
               </div>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Live RAG queries, technician guidance, escalation + Nandi tickets, L2/L3 feedback loop.
+              Live RAG queries, technician guidance, and an L2 feedback loop that improves the knowledge base.
             </p>
             <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-orange-200 group-hover:text-orange-100">
               Open support portal

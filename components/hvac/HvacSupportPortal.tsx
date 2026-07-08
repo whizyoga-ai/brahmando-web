@@ -16,7 +16,6 @@ import {
 const LEVELS: { id: SupportLevel; label: string; desc: string }[] = [
   { id: "L1", label: "L1 · Remote", desc: "Homeowner / front-desk safe steps" },
   { id: "L2", label: "L2 · Field tech", desc: "Diagnostics, parts, on-site guidance" },
-  { id: "L3", label: "L3 · Escalation", desc: "Dispatch, safety, specialist + ticket" },
 ];
 
 const FALLBACK_BRANDS: HvacBrand[] = [
@@ -37,11 +36,8 @@ const SAMPLES: Record<SupportLevel, string[]> = {
     "Outdoor unit hums but fan won't spin — capacitor test steps?",
     "15°F delta-T at supply — what next for no-cool call?",
     "Communicating system comm fault — where to start?",
-  ],
-  L3: [
-    "Gas smell near furnace — nursing home C-03",
     "Refrigerant leak suspected after ice on line",
-    "Dispatch tech — repeated breaker trip after L2 capacitor swap",
+    "Repeated breaker trip after capacitor swap — next checks?",
   ],
 };
 
@@ -143,7 +139,7 @@ export function HvacSupportPortal() {
         answer += `\n\nTicket: #${data.ticket_id}`;
       }
       setMessages((m) => [...m, { role: "bot", text: answer, meta: data }]);
-      if (data.level === "L2" || data.level === "L3") {
+      if (data.level === "L2") {
         setFeedbackFor(data);
       }
     } catch (e) {
@@ -299,7 +295,7 @@ export function HvacSupportPortal() {
         )}
       </div>
 
-      <div className="mb-4 grid gap-2 sm:grid-cols-3">
+      <div className="mb-4 grid gap-2 sm:grid-cols-2">
         {LEVELS.map((l) => (
           <button
             key={l.id}
@@ -373,7 +369,7 @@ export function HvacSupportPortal() {
         </div>
       </div>
 
-      {feedbackFor && (feedbackFor.level === "L2" || feedbackFor.level === "L3") && (
+      {feedbackFor && feedbackFor.level === "L2" && (
         <div className="mt-6 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4">
           <h3 className="text-sm font-semibold text-amber-100">Technician feedback ({feedbackFor.level})</h3>
           <p className="mt-1 text-xs text-slate-400">

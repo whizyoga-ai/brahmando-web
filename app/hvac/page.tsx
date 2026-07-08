@@ -11,10 +11,9 @@ export default function HvacSupportPage() {
             Real queries against the HVAC knowledge base and Ollama on the Brahmando GPU cluster.
             Select equipment brand and model for specific units — generic questions work without them.
             When brand/model is not in our KB, OpenRouter may assist (HVAC-only).
-            <strong className="text-slate-200"> L1</strong> remote steps for callers,{" "}
-            <strong className="text-slate-200"> L2</strong> field technician guidance,{" "}
-            <strong className="text-slate-200"> L3</strong> escalation with Nandi ticketing.
-            Technicians can submit feedback after L2/L3 answers to improve the knowledge base.
+            <strong className="text-slate-200"> L1</strong> remote steps for callers and{" "}
+            <strong className="text-slate-200"> L2</strong> field technician guidance.
+            Technicians can submit feedback after L2 answers to improve the knowledge base.
           </p>
         </div>
 

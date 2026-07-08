@@ -62,7 +62,7 @@ export const VISITOR_DESTINATIONS: VisitorDestination[] = [
     id: "workflows",
     icon: "⚡",
     title: `SMB workflows (${platformStats.workflows})`,
-    description: "Rhythm (4 SMB verticals), Nandi, Reach marketing, and HVAC L1/L2/L3 support portal.",
+    description: "Rhythm (4 SMB verticals), Nandi, Reach marketing, and HVAC L1/L2 support portal.",
     href: "/workflows",
   },
   {
