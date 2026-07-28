@@ -552,3 +552,151 @@
   background: rgba(0, 0, 0, 0.02);
 }
 
+
+/* ══════════════════════════════════════════════════════════════════════
+   THE ORBIT — brahmexa.com's visual language, made functional
+   ══════════════════════════════════════════════════════════════════════
+
+   brahmexa.com draws concentric dashed rings counter-rotating at 42s and
+   28s around a central sun, and uses circles as portals into things. This
+   is the same system, with one difference that matters: here the planets
+   ARE the catalog. Each one is a real marketplace item and a real link.
+
+   The rings mean something too. Distance from the centre is PRICE: the
+   inner ring is what costs nothing, the middle ring is the business plans,
+   the outer ring is the developer surface. Someone can read the tier model
+   off the picture before they read a word of it, which is more than a
+   pricing table manages.
+
+   Timings and the dashed-ring treatment are lifted from brahmexa.com
+   deliberately — two sites in one family should feel like one hand drew
+   them, and matching numbers is cheaper than matching by eye.
+   ────────────────────────────────────────────────────────────────────── */
+
+.bx-orbit-stage {
+  position: relative;
+  width: min(620px, 92vw);
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.bx-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed var(--border);
+  pointer-events: none;
+}
+/* Children need pointer events back — the ring itself must not eat clicks
+   aimed at whatever sits behind it. */
+.bx-ring > * { pointer-events: auto; }
+
+.bx-ring--outer { inset: 0;   animation: bx-spin 42s linear infinite; }
+.bx-ring--mid   { inset: 17%; animation: bx-spin 28s linear infinite reverse; }
+.bx-ring--inner {
+  inset: 34%;
+  border-style: solid;
+  border-color: var(--accent);
+  opacity: 0.55;
+  animation: bx-spin 64s linear infinite;
+}
+
+/* A slot holds one planet at a fixed angle on its ring. The ring spins the
+   slot; the planet's inner shell spins back at the same rate so the label
+   never ends up upside down. */
+.bx-slot { position: absolute; inset: 0; }
+
+.bx-planet {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bx-planet-shell { display: block; }
+.bx-ring--outer .bx-planet-shell { animation: bx-spin 42s linear infinite reverse; }
+.bx-ring--mid   .bx-planet-shell { animation: bx-spin 28s linear infinite; }
+.bx-ring--inner .bx-planet-shell { animation: bx-spin 64s linear infinite reverse; }
+
+.bx-planet-face {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  font-size: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.38);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.bx-planet:hover .bx-planet-face,
+.bx-planet:focus-visible .bx-planet-face {
+  transform: scale(1.16);
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.bx-planet:focus-visible { outline: none; }
+.bx-planet:focus-visible .bx-planet-face { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* The name rides under each planet, upright, revealed on hover so the
+   picture stays a picture until someone wants it to be a menu. */
+.bx-planet-label {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-2, #94a3b8);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.bx-planet:hover .bx-planet-label,
+.bx-planet:focus-visible .bx-planet-label { opacity: 1; }
+
+/* The core: what the whole thing is in orbit around. */
+.bx-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 6%;
+  background:
+    radial-gradient(circle at 35% 30%, var(--glow-2), transparent 62%),
+    radial-gradient(circle at 65% 70%, var(--glow-1), transparent 58%),
+    var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: 0 0 60px var(--glow-1);
+}
+
+@keyframes bx-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Motion, only for those who want it ───────────────────────────────
+   Three counter-rotating rings plus eleven counter-rotating planets is a
+   lot of movement for anyone with vestibular sensitivity, and this file
+   previously had no reduced-motion handling at all — including for the
+   watermark and the floating elements that were already here. The rings
+   stay, the spinning stops: the diagram still reads because position, not
+   motion, is what carries the meaning. */
+@media (prefers-reduced-motion: reduce) {
+  .bx-ring,
+  .bx-planet-shell,
+  .wm-rotate,
+  .wm-rotate-r,
+  .animate-float,
+  .animate-rise {
+    animation: none !important;
+  }
+  .bx-planet-label { opacity: 1; }
+}

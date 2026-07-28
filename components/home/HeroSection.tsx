@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { PartnerLogosBar } from "@/components/branding/PartnerLogosBar";
+import { OrbitHero } from "@/components/home/OrbitHero";
 import { platformStats } from "@/lib/platform-catalog";
 import { RHYTHM_SMB_VERTICALS_SUMMARY } from "@/lib/rhythm-verticals";
 
@@ -68,6 +69,17 @@ export function HeroSection() {
               Sign in or try a subscriber
             </Link>
           </div>
+        </div>
+
+        {/* The catalog in orbit. Placed above the platform counts because a
+            visitor can act on it — every planet is a product and a link —
+            whereas the counts are something to be told. */}
+        <div className="animate-rise mt-16">
+          <OrbitHero />
+          <p className="mx-auto mt-6 max-w-md text-center text-xs leading-relaxed text-slate-500">
+            Every planet is something you can take away. The closer to the centre, the less it
+            costs — the inner ring is free.
+          </p>
         </div>
 
         <div
