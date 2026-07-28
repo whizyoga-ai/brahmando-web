@@ -2,7 +2,7 @@ export type EducationAccessTier = "public" | "community" | "customer";
 
 const STORAGE_KEY = "brahmando-education-tier";
 
-/** ManjuLAB customer (paid) tier unlocks export. Community/public are read-only in chat. */
+/** Brahmexa customer (paid) tier unlocks export. Community/public are read-only in chat. */
 export function getEducationAccessTier(): EducationAccessTier {
   if (typeof window === "undefined") return "public";
 

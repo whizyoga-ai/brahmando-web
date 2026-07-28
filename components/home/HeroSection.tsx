@@ -48,7 +48,7 @@ export function HeroSection() {
           </h1>
 
           <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
-            Brahmando hosts ManjuLAB&apos;s GPU platform —{" "}
+            Brahmando hosts Brahmexa&apos;s GPU platform —{" "}
             <strong className="text-slate-200">{platformStats.agents} live agents</strong>,{" "}
             <strong className="text-slate-200">{platformStats.mcpServers} MCP servers</strong>, and{" "}
             <strong className="text-slate-200">{platformStats.workflows} SMB workflows</strong> on cluster today.

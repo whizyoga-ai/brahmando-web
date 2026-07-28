@@ -12,8 +12,8 @@ const footerLinks = {
     { label: "Docs",               href: "/docs" },
   ],
   Company: [
-    { label: "ManjuLAB",          href: "https://manjulab.com", external: true },
-    { label: "Brahmexa group",     href: "/#about" },
+    { label: "Brahmexa",           href: "https://www.brahmexa.com", external: true },
+    { label: "About",              href: "/#about" },
     { label: "Customer Access",    href: "/access#customer" },
     { label: "Community Program",  href: "/access#community" },
   ],
@@ -93,7 +93,10 @@ export function Footer() {
           className="mt-10 flex items-center justify-between pt-6 text-xs text-slate-700"
           style={{ borderTop: "1px solid var(--border)" }}
         >
-          <p>© {new Date().getFullYear()} ManjuLAB. All rights reserved.</p>
+          {/* Read from branding rather than hardcoded, so the entity on the
+              copyright line cannot drift away from the one named everywhere
+              else on the site. It said ManjuLAB while branding said Brahmexa. */}
+          <p>© {new Date().getFullYear()} {branding.company}. All rights reserved.</p>
           <p className="hidden sm:block">
             {branding.groupBrand} · {branding.host}
           </p>

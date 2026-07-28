@@ -10,15 +10,15 @@ export default function AccessPage() {
         </p>
         <h1 className="section-title mt-2">Access the Brahmando repository</h1>
         <p className="section-subtitle mt-3">
-          Brahmando hosts ManjuLAB-developed agents, MCP servers, and workflows. It is not a public
+          Brahmando hosts Brahmexa-developed agents, MCP servers, and workflows. It is not a public
           self-serve marketplace: deployment and detailed documentation are available through
-          ManjuLAB customer agreements or the community access program.
+          Brahmexa customer agreements or the community access program.
         </p>
 
         <section id="customer" className="mt-14 scroll-mt-24 rounded-2xl border border-cyan-300/25 bg-slate-900/50 p-8">
-          <h2 className="text-xl font-semibold text-slate-100">ManjuLAB Customer Access</h2>
+          <h2 className="text-xl font-semibold text-slate-100">Brahmexa Customer Access</h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-300">
-            Enterprise customers work with ManjuLAB under commercial terms. Your team receives
+            Enterprise customers work with Brahmexa under commercial terms. Your team receives
             access to the Brahmando catalog, integration support, and the operational stack aligned
             to your security and compliance requirements.
           </p>
@@ -28,10 +28,10 @@ export default function AccessPage() {
             rel="noopener noreferrer"
             className="btn-primary mt-6 inline-flex"
           >
-            Contact ManjuLAB
+            Contact Brahmexa
           </a>
           <p className="mt-3 text-xs text-slate-500">
-            Use the contact or inquiry form on the ManjuLAB site, or reach your account executive
+            Use the contact or inquiry form on the Brahmexa site, or reach your account executive
             directly.
           </p>
         </section>
@@ -39,7 +39,7 @@ export default function AccessPage() {
         <section id="community" className="mt-10 scroll-mt-24 rounded-2xl border border-orange-300/25 bg-slate-900/50 p-8">
           <h2 className="text-xl font-semibold text-slate-100">Community Access Program</h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-300">
-            ManjuLAB offers selected Brahmando assets at no cost to under-resourced organisations and
+            Brahmexa offers selected Brahmando assets at no cost to under-resourced organisations and
             community partners. Eligibility and scope are reviewed case by case; this is not an open
             download of the full repository.
           </p>
@@ -49,10 +49,10 @@ export default function AccessPage() {
             rel="noopener noreferrer"
             className="btn-secondary mt-6 inline-flex"
           >
-            Apply via ManjuLAB
+            Apply via Brahmexa
           </a>
           <p className="mt-3 text-xs text-slate-500">
-            Describe your organisation and mission on the ManjuLAB contact form; the team will reply
+            Describe your organisation and mission on the Brahmexa contact form; the team will reply
             with eligibility and next steps.
           </p>
         </section>

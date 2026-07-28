@@ -29,12 +29,12 @@ export default function PlatformPage() {
       <p className="mx-auto mt-12 max-w-xl px-4 text-center text-sm text-slate-500">
         Built by{" "}
         <a
-          href="https://manjulab.com"
+          href="https://www.brahmexa.com"
           target="_blank"
           rel="noopener noreferrer"
           className="text-cyan-200/90 hover:text-cyan-100"
         >
-          ManjuLAB
+          Brahmexa
         </a>
         . Internal infra (Ollama, raw API health endpoints, etc.) is not listed here — this page is
         for visitors, not cluster operators.

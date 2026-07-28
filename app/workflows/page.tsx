@@ -13,7 +13,7 @@ export default function WorkflowsPage() {
         <div className="mb-8">
           <h1 className="section-title">Workflows</h1>
           <p className="section-subtitle max-w-3xl">
-            ManjuLAB SMB products on Brahmando —{" "}
+            Brahmexa SMB products on Brahmando —{" "}
             <strong className="text-slate-100">Rhythm</strong> ({RHYTHM_VERTICALS.length} SMB industry verticals,{" "}
             {subCount} business-process sub-workflows),{" "}
             <strong className="text-slate-100">Nandi</strong> (support ticketing), and{" "}

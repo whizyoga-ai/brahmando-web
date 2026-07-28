@@ -68,7 +68,7 @@ export default function DocsPage() {
           <h2>Access</h2>
 
           <p>
-            Document schemas, templates, and integration guides are provided to ManjuLAB customers
+            Document schemas, templates, and integration guides are provided to Brahmexa customers
             and approved community partners as part of the access program.
           </p>
 

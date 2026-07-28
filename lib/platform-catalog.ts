@@ -77,7 +77,7 @@ export const VISITOR_DESTINATIONS: VisitorDestination[] = [
     id: "access",
     icon: "🔑",
     title: "Request access",
-    description: "Enterprise deployment or community program enrollment for ManjuLAB assets.",
+    description: "Enterprise deployment or community program enrollment for Brahmexa assets.",
     href: "/access",
   },
 ];

@@ -20,34 +20,43 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
+// `authors` renders a meta author tag, and it named ManjuLAB — so every page
+// on this domain carried a machine-readable claim that ManjuLAB is who
+// built and owns this. Together with the keyword and the "engineered by
+// ManjuLAB" descriptions, this was the single most direct statement of
+// identity on the site, repeated on every route.
+//
+// It is also the one a search engine reads first. brahmexa.com had the
+// equivalent claims removed on 2026-07-27; leaving them here would have
+// meant the group's own two domains contradicting each other, and the
+// contradiction resolving toward the older, better-established name.
 export const metadata: Metadata = {
-  title: "Brahmando — The Intelligence Repository of Brahmexa",
+  title: "Brahmando — the Brahmexa platform",
   description:
-    "Brahmando is the sovereign asset repository of the Brahmexa group — AI agents, MCP servers, agentic workflows, and frameworks engineered by ManjuLAB for enterprise customers and community partners.",
+    "Brahmando is the Brahmexa platform for AI agents, MCP servers and agentic workflows — available to Brahmexa customers and community partners.",
   keywords: [
-    "R&D repository",
     "MCP servers",
     "AI agents",
-    "Brahmexa",
-    "ManjuLAB",
-    "Brahmando",
     "AI workflows",
-    "god of the gaps",
+    "agentic workflows",
+    "Brahmexa",
+    "Brahmando",
+    "Brahmexa platform",
   ],
-  authors: [{ name: "ManjuLAB" }],
+  authors: [{ name: "Brahmexa" }],
   openGraph: {
-    title: "Brahmando — The Intelligence Repository of Brahmexa",
+    title: "Brahmando — the Brahmexa platform",
     description:
-      "The sovereign asset repository of the Brahmexa group. AI agents, MCP servers, workflows, and frameworks built by ManjuLAB.",
+      "The Brahmexa platform for AI agents, MCP servers and agentic workflows.",
     url: "https://brahmando.com",
     siteName: "Brahmando",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brahmando — The Intelligence Repository of Brahmexa",
+    title: "Brahmando — the Brahmexa platform",
     description:
-      "The sovereign asset repository of the Brahmexa group. AI agents, MCP servers, workflows, and frameworks built by ManjuLAB.",
+      "The Brahmexa platform for AI agents, MCP servers and agentic workflows.",
   },
 };
 

@@ -14,7 +14,7 @@ export default function CSRPage() {
           </div>
           <h1 className="section-title">Corporate Social Responsibility</h1>
           <p className="section-subtitle max-w-3xl">
-            {branding.host} hosts ManjuLAB-developed assets. Through CSR, we deliver AI education tools at no cost to
+            {branding.host} hosts Brahmexa-developed assets. Through CSR, we deliver AI education tools at no cost to
             qualifying schools, students, and community partners — starting with the Education Portal and FAFSA Agent.
           </p>
           <PartnerLogosBar className="mt-8" showTopRule={false} />

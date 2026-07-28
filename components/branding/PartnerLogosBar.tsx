@@ -23,22 +23,12 @@ export function PartnerLogosBar({
   return (
     <div
       className={`flex flex-wrap items-center justify-center gap-6 sm:gap-10 ${showTopRule ? "border-t border-slate-300/20 pt-6" : "pt-1"} ${className}`}
-      aria-label="Brahmexa group: ManjuLAB, Brahmexa, Brahmando"
+      aria-label="Brahmexa and Brahmando"
     >
-      <Link
-        href={branding.companySite}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center opacity-90 transition-opacity hover:opacity-100"
-      >
-        <Image
-          src={branding.logos.manjulab.wordmark}
-          alt={`${branding.developer} logo`}
-          width={180}
-          height={48}
-          className={`h-auto w-auto object-contain ${imgMax}`}
-        />
-      </Link>
+      {/* The ManjuLAB wordmark was the first logo on the bar, linked to
+          manjulab.com. A logo is an ownership claim that needs no sentence to
+          read, so it stated the wrong company faster than the copy could
+          state the right one. Two marks now: the company and its platform. */}
       <Link href="/#about" className="flex items-center opacity-90 transition-opacity hover:opacity-100">
         <Image
           src={branding.logos.brahmexa.wordmark}
