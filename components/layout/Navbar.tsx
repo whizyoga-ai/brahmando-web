@@ -3,18 +3,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { branding } from "@/lib/branding";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { SessionBadge } from "@/components/layout/SessionBadge";
 
 // Catalog leads, because getting a product is what this site is for. The
 // order is the journey: what can I get → what is running → how do I use it →
 // how do I reach a person.
 const navLinks = [
-  { label: "Catalog",  href: "/catalog" },
-  { label: "Platform", href: "/platform" },
-  { label: "Docs",     href: "/docs" },
-  { label: "Access",   href: "/access" },
+  { label: "Marketplace", href: "/marketplace" },
+  { label: "Developers",  href: "/developers" },
+  { label: "Platform",    href: "/platform" },
+  { label: "Docs",        href: "/docs" },
+  { label: "Access",      href: "/access" },
 ];
 
 export function Navbar() {
@@ -45,7 +47,7 @@ export function Navbar() {
               {branding.name}
             </span>
             <span className="block text-[9px] uppercase tracking-[0.2em] text-slate-500">
-              Asset Repository · Brahmexa
+              Marketplace · Brahmexa
             </span>
           </div>
         </Link>
@@ -73,16 +75,11 @@ export function Navbar() {
           >
             {branding.developer}
           </a>
-          {/* "Your account" rather than "Request Access": this is a place
-              you get things, not a gate you apply at. The account page copes
-              with having no account, so it is a safe landing either way. */}
-          <Link href="/account" className="text-xs font-medium text-slate-400 hover:text-slate-200">
-            Account
-          </Link>
-          <Link href="/catalog" className="btn-primary px-4 py-2 text-xs">
-            Get a product
-            <ChevronRight size={13} />
-          </Link>
+          {/* Shows the current persona, so switching subscribers and watching
+              the catalog change is legible from any page — which is the whole
+              reason the sample accounts exist. Falls back to a Sign in button
+              for guests. */}
+          <SessionBadge />
         </div>
 
         <button
@@ -121,10 +118,7 @@ export function Navbar() {
           </div>
           <div className="mt-4 flex items-center justify-between border-t pt-4" style={{ borderColor: "var(--border)" }}>
             <ThemeToggle />
-            <Link href="/catalog" className="btn-primary" onClick={() => setOpen(false)}>
-              Get a product
-              <ChevronRight size={13} />
-            </Link>
+            <SessionBadge compact />
           </div>
           <p className="mt-3 text-center text-[10px] text-slate-600">
             {branding.groupBrand} · {branding.developer} · {branding.host}

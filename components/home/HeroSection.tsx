@@ -48,31 +48,25 @@ export function HeroSection() {
               The platform numbers stay, one section down, where they are
               evidence rather than the opening line. */}
           <h1 className="text-5xl font-bold tracking-tight text-slate-50 sm:text-6xl lg:text-[5.5rem] lg:leading-[1.04]">
-            Get it running
+            A marketplace
             <br />
-            <span className="text-gradient">today.</span>
+            <span className="text-gradient">that keeps running.</span>
           </h1>
 
           <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
-            Brahmando is where you pick up a Brahmexa product and start using it — an AI
-            assistant for your website, a marketing studio, hosting that watches your site, or a
-            study portal. Choose one, and you leave with the thing itself: a key to paste, an
-            account to open, or a person who gets in touch.
+            Take away a widget for your website, an app for a classroom, an API key or an MCP
+            endpoint for your own software — then keep using it on a plan. Browse the whole
+            catalog without an account; sign in when you want to take something home.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/catalog" className="btn-primary">
-              See what you can get
+            <Link href="/marketplace" className="btn-primary">
+              Browse the marketplace
               <ArrowRight size={15} />
             </Link>
-            <a
-              href="https://www.brahmexa.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              What Brahmexa does
-            </a>
+            <Link href="/signin" className="btn-secondary">
+              Sign in or try a subscriber
+            </Link>
           </div>
         </div>
 

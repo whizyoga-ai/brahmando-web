@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { AccountView } from "@/components/delivery/AccountView";
+import { AccountView } from "@/components/marketplace/AccountView";
 
 export const metadata: Metadata = {
   title: "Your account | Brahmando",
-  description: "Your Brahmexa products, plans and keys.",
+  description: "Your plan, your entitlements, and what they unlock.",
   robots: { index: false, follow: false },
 };
 
