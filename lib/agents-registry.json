@@ -9,7 +9,7 @@
       "category": "Orchestration",
       "description": "Multi-channel AI copilot for SMBs. Handles WhatsApp, Email, and Web messaging, classifies intent, generates daily business summaries, and delivers sales & finance insights.",
       "tags": ["orchestration", "smb", "whatsapp", "email", "copilot"],
-      "author": "ManjuLAB",
+      "author": "Brahmexa",
       "mcpServer": null,
       "port": 8100,
       "inputSchema": {
@@ -36,7 +36,7 @@
       "category": "Advisory",
       "description": "AI startup advisor and router — compliance, messaging, support tickets (Nandi), and general coaching for founders and SMB operators.",
       "tags": ["startup", "advisory", "support", "routing"],
-      "author": "ManjuLAB",
+      "author": "Brahmexa",
       "mcpServer": null,
       "port": 9000,
       "inputSchema": {

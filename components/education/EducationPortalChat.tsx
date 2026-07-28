@@ -56,7 +56,7 @@ function BotMessageActions({ text, meta }: { text: string; meta?: ActorChatRespo
   if (!canExport) {
     return (
       <p className="mt-2 text-[10px] text-slate-500">
-        Export (Markdown / JSON) is available for ManjuLAB customer accounts.{" "}
+        Export (Markdown / JSON) is available for Brahmexa customer accounts.{" "}
         <Link href="/access#customer" className="text-cyan-700 underline">
           Request access
         </Link>
@@ -115,7 +115,7 @@ function ChatPanel({
   return (
     <div className={className}>
       <div className="bg-cyan-600 px-4 py-3.5 text-sm font-semibold text-white">
-        Education Portal · ManjuLab CSR
+        Education Portal · Brahmexa CSR
       </div>
 
       <div className="flex flex-wrap gap-1.5 border-b border-teal-100 bg-teal-50/80 p-2">
@@ -204,7 +204,7 @@ export function EducationPortalChat({ mode = "widget" }: Props) {
     setMessages([
       {
         role: "bot",
-        text: "Hi! I am the ManjuLab CSR Education Portal. Pick your role above and ask about CBSE exams, FAFSA, lesson plans, or mock tests.",
+        text: "Hi! I am the Brahmexa CSR Education Portal. Pick your role above and ask about CBSE exams, FAFSA, lesson plans, or mock tests.",
       },
     ]);
   }, []);

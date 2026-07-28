@@ -76,13 +76,15 @@ export default function RootLayout({
           <DeepakChat />
         </ThemeProvider>
 
-        {/* @manjulab watermark — rendered on every page */}
+        {/* Watermark, rendered on every page. It read @manjulab — a
+            signature in the corner of every screen, which is exactly what a
+            watermark is for and exactly why it had to change with the rest. */}
         <div
           aria-hidden="true"
           className="pointer-events-none fixed bottom-4 right-5 z-[200] select-none"
         >
           <span className="text-[9px] font-bold tracking-[0.28em] text-white/[0.22]">
-            @manjulab
+            @brahmexa
           </span>
         </div>
       </body>
