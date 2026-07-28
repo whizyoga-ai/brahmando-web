@@ -5,7 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { CosmicWatermark } from "@/components/watermark/CosmicWatermark";
-import { DeepakChat } from "@/components/chat/DeepakChat";
+import { NexusWidget } from "@/components/nexus/NexusWidget";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -73,7 +73,17 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
-          <DeepakChat />
+          {/* Nexus, not the bespoke chat that used to sit here.
+
+              This site now sells Nexus, so the assistant answering questions
+              on it should be Nexus: a visitor can ask it what Nexus is and
+              judge the reply, which is far harder to fake than a screenshot.
+              Two floating chat buttons in the same corner was also just a
+              defect.
+
+              DeepakChat and its backend are untouched and still live at
+              chat.brahmando.com — restoring it is one import and one line. */}
+          <NexusWidget />
         </ThemeProvider>
 
         {/* Watermark, rendered on every page. It read @manjulab — a

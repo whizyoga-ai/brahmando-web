@@ -41,28 +41,38 @@ export function HeroSection() {
             </span>
           </div>
 
+          {/* The hero used to lead with "Intelligence for every gap" over a
+              count of agents and MCP servers — true, and written for someone
+              who already knew what those were. This site's job is now to
+              hand over a product, so it says which products and what arrives.
+              The platform numbers stay, one section down, where they are
+              evidence rather than the opening line. */}
           <h1 className="text-5xl font-bold tracking-tight text-slate-50 sm:text-6xl lg:text-[5.5rem] lg:leading-[1.04]">
-            Intelligence for
+            Get it running
             <br />
-            <span className="text-gradient">every gap.</span>
+            <span className="text-gradient">today.</span>
           </h1>
 
           <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
-            Brahmando hosts Brahmexa&apos;s GPU platform —{" "}
-            <strong className="text-slate-200">{platformStats.agents} live agents</strong>,{" "}
-            <strong className="text-slate-200">{platformStats.mcpServers} MCP servers</strong>, and{" "}
-            <strong className="text-slate-200">{platformStats.workflows} SMB workflows</strong> on cluster today.
-            Rhythm ships {RHYTHM_SMB_VERTICALS_SUMMARY.toLowerCase()}
+            Brahmando is where you pick up a Brahmexa product and start using it — an AI
+            assistant for your website, a marketing studio, hosting that watches your site, or a
+            study portal. Choose one, and you leave with the thing itself: a key to paste, an
+            account to open, or a person who gets in touch.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/csr" className="btn-primary">
-              Explore CSR programs
+            <Link href="/catalog" className="btn-primary">
+              See what you can get
               <ArrowRight size={15} />
             </Link>
-            <Link href="/access#customer" className="btn-secondary">
-              Request enterprise access
-            </Link>
+            <a
+              href="https://www.brahmexa.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              What Brahmexa does
+            </a>
           </div>
         </div>
 
