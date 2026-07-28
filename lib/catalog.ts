@@ -141,7 +141,7 @@ export const CATALOG: CatalogItem[] = [
     tagline: "REST for everything above",
     kind: "api",
     status: "building",
-    requires: "growth",
+    requires: "scale",
     summary:
       "One stable REST surface at /api/v1 — auth, tenants, devices, entitlements, education content, learning progress and classroom sessions — so your own software can use what the apps use.",
     deliverable: "A service credential and the OpenAPI document",
@@ -160,7 +160,7 @@ export const CATALOG: CatalogItem[] = [
     tagline: "Give your assistant these tools",
     kind: "mcp",
     status: "building",
-    requires: "growth",
+    requires: "scale",
     summary:
       "An MCP endpoint exposing curated tools — nexus_search, nexus_query, education_list_bundles, learning_get_progress, space_invoke_agent, reach_start_audit and more — each with authentication, tenant scoping and rate limits.",
     deliverable: "An MCP endpoint URL and a service credential",
@@ -177,7 +177,7 @@ export const CATALOG: CatalogItem[] = [
     tagline: "Legal and compliance MCP for US small business",
     kind: "mcp",
     status: "beta",
-    requires: "growth",
+    requires: "scale",
     summary:
       "Tax, startup law and policy question answering for US small businesses, exposed as an MCP server your assistant can call.",
     deliverable: "Connection details for your MCP client",
@@ -192,7 +192,7 @@ export const CATALOG: CatalogItem[] = [
     tagline: "WhatsApp bridge for agent messaging",
     kind: "mcp",
     status: "beta",
-    requires: "growth",
+    requires: "scale",
     summary:
       "An MCP bridge that lets an agent send and receive WhatsApp messages for customer notifications and conversations.",
     deliverable: "Connection details for your MCP client",
@@ -209,7 +209,7 @@ export const CATALOG: CatalogItem[] = [
     tagline: "Digital marketing studio",
     kind: "portal",
     status: "live",
-    requires: "starter",
+    requires: "growth",
     summary:
       "Drafts social posts and content, adapts each one per channel, and holds every publish behind an approval step you control.",
     deliverable: "Access to REACH Studio in your browser",
@@ -260,7 +260,7 @@ export const CATALOG: CatalogItem[] = [
     tagline: "Agents for small business operations",
     kind: "portal",
     status: "live",
-    requires: "starter",
+    requires: "growth",
     summary:
       "Industry-shaped assistants that answer routine questions and handle repetitive back-office steps.",
     deliverable: "Access to the assistant for your vertical",
