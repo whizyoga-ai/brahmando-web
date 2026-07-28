@@ -8,7 +8,42 @@
    Applied via data-theme="…" on <html> (set by ThemeProvider client component).
    ───────────────────────────────────────────────────────────────────── */
 
+/* EDEN — brahmexa.com's default theme, value for value.
+ *
+ * Brahmando used to open in cool blue on navy while brahmexa.com opened in
+ * warm gold and teal on a deep teal-black. Side by side they read as two
+ * companies. These are the exact tokens from brahmexa-web's
+ * cosmic-assets/theme-presets.css [data-cosmic-theme="eden"] — copied rather
+ * than colour-matched by eye, so the two sites cannot drift apart by a shade
+ * every time either is touched.
+ *
+ * The signature is the combination: teal accent against a GOLD border. The
+ * gold is what makes it warm; a teal border on teal-black would just read as
+ * dark blue again.
+ */
 :root,
+[data-theme="eden"] {
+  --bg:           #071018;
+  --bg-soft:      #0c1724;
+  --panel:        rgba(10, 18, 28, 0.82);
+  --border:       rgba(241, 205, 126, 0.28);
+  --border-hover: rgba(241, 205, 126, 0.58);
+  --glow-1:       rgba(244, 200, 106, 0.20);
+  --glow-2:       rgba(87, 216, 207, 0.16);
+  --grid-line:    rgba(241, 205, 126, 0.07);
+  --accent:       #57d8cf;
+  --accent-2:     #f4c86a;
+  --accent-dim:   rgba(87, 216, 207, 0.10);
+
+  /* Warm text, the other half of the eden feel. Cool grey type against gold
+     borders is what made the first attempt still look like the blue theme
+     wearing a gold coat. */
+  --text:         #f7efdb;
+  --text-2:       #c6b892;
+  --text-3:       #8d8268;
+}
+
+/* Kept so anything still asking for the old theme name resolves. */
 [data-theme="azure"] {
   --bg:           #020c1f;
   --bg-soft:      #061a3a;
@@ -134,11 +169,15 @@
       radial-gradient(ellipse 55% 40% at 95% 18%, var(--glow-2) 0%, transparent 58%),
       /* Deep shadow from below */
       radial-gradient(ellipse 60% 40% at 10% 92%, rgba(0, 0, 0, 0.45) 0%, transparent 70%);
-    @apply font-sans text-slate-100 antialiased;
+    @apply font-sans antialiased;
+    /* Explicit, because @apply compiles to a colour on <body> itself rather
+       than a class, so the slate remap further down never reaches it. */
+    color: var(--text);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-slate-50;
+    @apply font-semibold tracking-tight;
+    color: var(--text);
   }
 
   a {
@@ -161,19 +200,23 @@
     background-size: 64px 64px, 64px 64px, 128px 128px, 128px 128px;
   }
 
-  /* ── Blue primary CTA ── */
+  /* ── Primary CTA ──
+     Teal into gold, eden's two accents, on dark type. It was a hardcoded
+     blue gradient — the single loudest blue left on the page once the
+     tokens were warmed, and hardcoded so no theme could reach it. Dark
+     text on teal because white on #57d8cf fails contrast badly. */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full
            px-6 py-3 text-sm font-semibold
            transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0;
-    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
-    border: 1px solid rgba(59, 130, 246, 0.45);
-    color: #ffffff;
-    box-shadow: 0 4px 22px -5px rgba(59, 130, 246, 0.45);
+    background: linear-gradient(135deg, #57d8cf 0%, #7ae8df 55%, #f4c86a 100%);
+    border: 1px solid rgba(241, 205, 126, 0.55);
+    color: #071018;
+    box-shadow: 0 4px 22px -5px rgba(87, 216, 207, 0.45);
   }
   .btn-primary:hover {
-    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
-    box-shadow: 0 8px 30px -5px rgba(96, 165, 250, 0.55);
+    background: linear-gradient(135deg, #7ae8df 0%, #f4c86a 100%);
+    box-shadow: 0 8px 30px -5px rgba(244, 200, 106, 0.55);
   }
 
   /* ── Frosted glass secondary CTA ── */
@@ -699,4 +742,121 @@
     animation: none !important;
   }
   .bx-planet-label { opacity: 1; }
+}
+
+/* ── Warm the type without touching 600 class names ───────────────────
+   The markup uses Tailwind's slate scale for text in ~590 places. Eden's
+   type is warm cream and tan, and cool grey against gold borders is
+   precisely what made the first pass still look like the blue theme with a
+   gold trim.
+   Remapping the scale here changes every one of them at once, and keeps the
+   components readable — a component saying text-slate-400 still means
+   "secondary text", which is what the author meant. Rewriting 590 class
+   names to arbitrary hexes would have said less and broken more.
+   Only the dark end is remapped: slate-700 and up are used on light
+   surfaces (the amber group card, the white logo tiles) where cool grey is
+   correct and warm cream would vanish. */
+.text-slate-50,
+.text-slate-100,
+.text-slate-200  { color: var(--text); }
+.text-slate-300,
+.text-slate-400  { color: var(--text-2); }
+.text-slate-500,
+.text-slate-600  { color: var(--text-3); }
+
+/* ══════════════════════════════════════════════════════════════════════
+   PORTALS — circular marketplace items
+   ══════════════════════════════════════════════════════════════════════
+   brahmexa.com renders its services as circles, not cards: a pulsing ring
+   with a soft radial glow, a dashed orbit turning just inside it, and the
+   content in the core. The classes and the timings here are its
+   .portal-hero-frame / .portal-ring / .portal-orbit, at marketplace scale.
+
+   A circle is a worse container than a rectangle — less room, harder to
+   align, unforgiving with long words — so the content is rationed to what
+   fits: mark, name, one line, one status pill. Anything more belongs on the
+   item's own page, which is one click away.
+   ────────────────────────────────────────────────────────────────────── */
+
+.bx-portal {
+  position: relative;
+  width: min(240px, 62vw);
+  aspect-ratio: 1;
+  display: block;
+  flex: 0 0 auto;
+  transition: transform 0.28s ease;
+}
+.bx-portal:hover { transform: scale(1.05); }
+.bx-portal:focus-visible { outline: none; }
+.bx-portal:focus-visible .bx-portal-ring { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* The glow. Tinted per item via --p-accent so a row of portals reads as
+   different things at a glance rather than eleven identical discs. */
+.bx-portal-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: radial-gradient(circle, var(--p-glow, rgba(87, 216, 207, 0.20)) 0%, transparent 68%);
+  box-shadow: 0 0 60px var(--p-glow, rgba(87, 216, 207, 0.20));
+  animation: bx-portal-pulse 4s ease-in-out infinite;
+}
+.bx-portal-orbit {
+  position: absolute;
+  inset: 5%;
+  border-radius: 50%;
+  border: 1px dashed rgba(241, 205, 126, 0.25);
+  animation: bx-spin 22s linear infinite;
+}
+.bx-portal-core {
+  position: absolute;
+  inset: 13%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  padding: 12%;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+}
+.bx-portal-glyph { font-size: 26px; line-height: 1; color: var(--p-accent, var(--accent)); }
+.bx-portal-name {
+  font-size: clamp(0.78rem, 2vw, 0.92rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+}
+/* Two lines then ellipsis: a circle has no room to argue with a long
+   tagline, and letting it overflow breaks the shape entirely. */
+.bx-portal-sub {
+  font-size: 0.62rem;
+  line-height: 1.35;
+  color: var(--text-2);
+  max-width: 130px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bx-portal-foot { display: flex; align-items: center; gap: 5px; margin-top: 1px; }
+
+/* Locked items dim rather than disappear — knowing a thing exists and is
+   not yours is the information that sells the upgrade. */
+.bx-portal.is-locked .bx-portal-core { opacity: 0.82; }
+.bx-portal.is-locked .bx-portal-ring { animation: none; box-shadow: none; }
+.bx-portal.is-unavailable { opacity: 0.6; }
+.bx-portal.is-unavailable .bx-portal-ring { animation: none; box-shadow: none; }
+
+@keyframes bx-portal-pulse {
+  0%, 100% { box-shadow: 0 0 52px var(--p-glow, rgba(87, 216, 207, 0.18)); }
+  50%      { box-shadow: 0 0 78px var(--p-glow, rgba(87, 216, 207, 0.30)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bx-portal-ring, .bx-portal-orbit { animation: none !important; }
+  .bx-portal:hover { transform: none; }
 }

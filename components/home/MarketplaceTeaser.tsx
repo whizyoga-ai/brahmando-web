@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CATALOG, KIND_LABEL, type ItemKind } from "@/lib/catalog";
-import { StatusChip } from "@/components/marketplace/StatusChip";
+import { PortalCard } from "@/components/marketplace/PortalCard";
 
 /**
  * The marketplace, on the homepage, grouped by what a thing *is*.
@@ -41,31 +41,13 @@ export function MarketplaceTeaser() {
               <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
                 {KIND_LABEL[g.kind]}s
               </h3>
-              <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {/* Circles wrap in a centred flex row rather than a grid.
+                  Equal discs read as a constellation when allowed to sit
+                  close and centre; forced into columns they read as a table
+                  with the corners knocked off. */}
+              <div className="mt-5 flex flex-wrap items-start justify-center gap-x-6 gap-y-10 sm:justify-start">
                 {g.items.map((i) => (
-                  <Link key={i.slug} href={`/marketplace/${i.slug}/`} className="card group flex flex-col p-5">
-                    <div className="flex items-start justify-between gap-3">
-                      <span
-                        aria-hidden="true"
-                        className="flex h-10 w-10 items-center justify-center rounded-xl text-lg"
-                        style={{
-                          border: `1px solid ${i.accent}55`,
-                          color: i.accent,
-                          background: "var(--accent-dim)",
-                        }}
-                      >
-                        {i.glyph}
-                      </span>
-                      <StatusChip status={i.status} />
-                    </div>
-                    <p className="mt-3 font-bold text-slate-100">{i.name}</p>
-                    <p className="text-xs" style={{ color: i.accent }}>
-                      {i.tagline}
-                    </p>
-                    <p className="mt-2 flex-1 text-xs leading-relaxed text-slate-500">
-                      {i.deliverable}
-                    </p>
-                  </Link>
+                  <PortalCard key={i.slug} item={i} />
                 ))}
               </div>
             </div>
